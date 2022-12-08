@@ -1,0 +1,30 @@
+[main] Building folder: example 
+[main] Configuring folder: example 
+[proc] Executing command: /usr/bin/cmake --no-warn-unused-cli -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE -DCMAKE_BUILD_TYPE:STRING=Debug -DCMAKE_C_COMPILER:FILEPATH=/usr/bin/gcc -DCMAKE_CXX_COMPILER:FILEPATH=/usr/bin/g++ -S/home/sgbush/outputlogcolor/example -B/home/sgbush/outputlogcolor/example/build -G Ninja
+[cmake] Not searching for unused variables given on the command line.
+[cmake] -- Configuring done
+[cmake] -- Generating done
+[cmake] -- Build files have been written to: /home/sgbush/outputlogcolor/example/build
+[build] Starting build
+[proc] Executing command: /usr/bin/cmake --build /home/sgbush/outputlogcolor/example/build --config Debug --target all --
+[build] [1/2  50% :: 0.021] Building CXX object CMakeFiles/app.dir/main.cpp.o
+[build] FAILED: CMakeFiles/app.dir/main.cpp.o 
+[build] /usr/bin/g++   -g -Wall -Wextra -Wpedantic -Wconversion -MD -MT CMakeFiles/app.dir/main.cpp.o -MF CMakeFiles/app.dir/main.cpp.o.d -o CMakeFiles/app.dir/main.cpp.o -c /home/sgbush/outputlogcolor/example/main.cpp
+[build] /home/sgbush/outputlogcolor/example/main.cpp: In function ‘bool FunctionA(int)’:
+[build] /home/sgbush/outputlogcolor/example/main.cpp:14:20: warning: unused parameter ‘param’ [-Wunused-parameter]
+[build]    14 | bool FunctionA(int param)
+[build]       |                ~~~~^~~~~
+[build] /home/sgbush/outputlogcolor/example/main.cpp: In function ‘int main(int, char**)’:
+[build] /home/sgbush/outputlogcolor/example/main.cpp:25:5: error: ‘Functiona’ was not declared in this scope; did you mean ‘FunctionA’?
+[build]    25 |     Functiona(0);
+[build]       |     ^~~~~~~~~
+[build]       |     FunctionA
+[build] /home/sgbush/outputlogcolor/example/main.cpp:27:14: error: too many arguments to function ‘bool FunctionA(int)’
+[build]    27 |     FunctionA(1, 2, 3);
+[build]       |     ~~~~~~~~~^~~~~~~~~
+[build] /home/sgbush/outputlogcolor/example/main.cpp:14:6: note: declared here
+[build]    14 | bool FunctionA(int param)
+[build]       |      ^~~~~~~~~
+[build] ninja: build stopped: subcommand failed.
+[proc] The command: /usr/bin/cmake --build /home/sgbush/outputlogcolor/example/build --config Debug --target all -- exited with code: 1 and signal: null
+[build] Build finished with exit code 1

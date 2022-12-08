@@ -1,0 +1,61 @@
+{
+  "name": "BuildOutputColorizer",
+  "displayName": "Build Output Colorizer",
+  "description": "Colorizes output log for VSCode hosted builds",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Formatters"
+  ],
+  "contributes": {
+    "configurationDefaults": {
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+              "scope" : "markup.other.log.error",
+              "settings": { "foreground": "#FF0000" }
+            },
+            {
+              "scope" : "markup.other.log.warn",
+              "settings": { "foreground": "#c500f7cc" }
+            },
+            {
+              "scope" : "markup.other.log.info",
+              "settings": { "foreground": "#2cd3c5" }
+            },
+            {
+              "scope" : "markup.other.log.debug",
+              "settings": { "foreground": "#888585" }
+            },
+            {
+              "scope" : "markup.other.log.highlight",
+              "settings": { "foreground": "#19ff04" }
+            }
+        ]
+      }
+    },
+    "languages": [
+      {
+        "id": "BuildOutput",
+        "configuration": "./language-configuration.json",
+        "mimetypes": [ "log", "text/log", "text/x-log", "text/x-code-output", "x-code-output" ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "BuildOutput",
+        "scopeName": "code.log",
+        "path": "./syntaxes/log.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.cpp": "c++",
+          "source.cpp": "c++"
+        }
+      }
+    ]
+
+  }
+}
+
+

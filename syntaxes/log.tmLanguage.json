@@ -1,0 +1,50 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Log",
+	"scopeName": "code.log",
+	"patterns": [ { "include": "#diagnostics" }, { "include": "#compound" } ],
+	"repository": {
+		"diagnostics": {
+			"patterns": [
+				{
+					"match": "error: .*$",
+					"name": "markup.other.log.error"
+				},
+				{
+					"match": "undefined reference to `.*'",
+					"name": "markup.other.log.error"
+				},
+				{
+					"match": "multiple definition of `.*'",
+					"name": "markup.other.log.error"
+				},
+				{
+					"match": "warning: .*$",
+					"name": "markup.other.log.warn"
+				},
+				{
+					"match": "note: .*$",
+					"name": "markup.other.log.info"
+				},
+				{
+					"match": "^\\[[A-Za-z]+\\]",
+					"name": "markup.other.log.debug"
+				},
+				{
+					"match": "\\[[0-9]+/[0-9]+\\]",
+					"name": "markup.other.log.highlight"
+				},
+				{
+					"begin": "In function ",
+					"end": ":",
+					"captures": { "0": { "name": "markup.other.log.info" } },
+					"contentName": "meta.embedded.block.cpp",
+					"patterns": [ {"include": "source.cpp"} ]
+				}
+			]
+		}
+	}
+}
+
+
+

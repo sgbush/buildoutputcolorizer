@@ -1,0 +1,8 @@
+
+
+
+# ignore build directories
+**/[Bb]uild
+
+
+
