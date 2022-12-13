@@ -11,6 +11,10 @@
 					"name": "markup.other.log.error"
 				},
 				{
+					"match": "error C[0-9]+ : .*$",
+					"name": "markup.other.log.error"
+				},
+				{
 					"match": "undefined reference to `.*'",
 					"name": "markup.other.log.error"
 				},
