@@ -14,7 +14,9 @@
             "inherits":["Debug"],
             "cacheVariables": {
                 "CMAKE_CXX_COMPILER": "cl.exe",
-                "CMAKE_MAKE_PROGRAM": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja\\ninja.exe",
+                "CMAKE_MAKE_PROGRAM": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja\\ninja.exe"
+            },
+            "environment": {
                 "CXXFLAGS": "/Wall"
             }
         },
@@ -23,7 +25,9 @@
             "name": "amd64-gcc",
             "inherits":["Debug"],
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "gcc"
+            },
+            "environment": {
                 "CXXFLAGS": "-Wall -Wextra -Wpedantic -Wconversion"
             }
         },
@@ -32,7 +36,9 @@
             "name": "amd64-clang",
             "inherits":["Debug"],
             "cacheVariables": {
-                "CMAKE_CXX_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang"
+            },
+            "environment": {
                 "CXXFLAGS": "-Wall -Wextra -Wpedantic -Wconversion"
             }
         }
