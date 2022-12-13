@@ -2,16 +2,17 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Log",
 	"scopeName": "code.log",
-	"patterns": [ { "include": "#diagnostics" }, { "include": "#compound" } ],
+	"patterns": [
+		{ "include": "#gcc" },
+		{ "include": "#clang" },
+		{ "include": "#msvc" },
+		{ "include": "#cmake" }
+	],
 	"repository": {
-		"diagnostics": {
+		"gcc": {
 			"patterns": [
 				{
 					"match": "error: .*$",
-					"name": "markup.other.log.error"
-				},
-				{
-					"match": "error C[0-9]+ : .*$",
 					"name": "markup.other.log.error"
 				},
 				{
@@ -31,19 +32,43 @@
 					"name": "markup.other.log.info"
 				},
 				{
+					"begin": "In function ",
+					"end": ":",
+					"captures": { "0": { "name": "markup.other.log.info" } },
+					"contentName": "meta.embedded.block.cpp",
+					"patterns": [ {"include": "source.cpp"} ]
+				}
+			]
+		},
+		"clang": {
+			"patterns": [
+			]
+		},
+		"msvc": {
+			"patterns": [
+				{
+					"match": "error C[0-9]+: .*$",
+					"name": "markup.other.log.error"
+				},
+				{
+					"match": "warning C[0-9]+: .*$",
+					"name": "markup.other.log.warn"
+				},
+				{
+					"match": "note: .*$",
+					"name": "markup.other.log.info"
+				}
+			]
+		},
+		"cmake": {
+			"patterns": [
+				{
 					"match": "^\\[[A-Za-z]+\\]",
 					"name": "markup.other.log.debug"
 				},
 				{
 					"match": "\\[[0-9]+/[0-9]+\\]",
 					"name": "markup.other.log.highlight"
-				},
-				{
-					"begin": "In function ",
-					"end": ":",
-					"captures": { "0": { "name": "markup.other.log.info" } },
-					"contentName": "meta.embedded.block.cpp",
-					"patterns": [ {"include": "source.cpp"} ]
 				}
 			]
 		}
