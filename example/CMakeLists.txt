@@ -12,8 +12,5 @@ project(syntax)
 
 add_executable(app)
 target_sources(app PRIVATE main.cpp)
-target_compile_options(app PRIVATE
-  -Wall -Wextra -Wpedantic -Wconversion
-)
 
 

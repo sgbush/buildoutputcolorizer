@@ -1,0 +1,54 @@
+{
+    "version": 6,
+    "configurePresets": [
+        {
+            "name": "Debug",
+            "hidden": true,
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE":"Debug"
+            }
+        },
+        {
+            "architecture":{"value": "amd64"},
+            "name": "amd64-msvc",
+            "inherits":["Debug"],
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_MAKE_PROGRAM": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\Ninja\\ninja.exe",
+                "CXXFLAGS": "/Wall"
+            }
+        },
+        {
+            "architecture":{"value": "amd64"},
+            "name": "amd64-gcc",
+            "inherits":["Debug"],
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "gcc",
+                "CXXFLAGS": "-Wall -Wextra -Wpedantic -Wconversion"
+            }
+        },
+        {
+            "architecture":{"value": "amd64"},
+            "name": "amd64-clang",
+            "inherits":["Debug"],
+            "cacheVariables": {
+                "CMAKE_CXX_COMPILER": "clang",
+                "CXXFLAGS": "-Wall -Wextra -Wpedantic -Wconversion"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "amd64-msvc",
+            "configurePreset": "amd64-msvc"
+        },
+        {
+            "name": "amd64-msvc",
+            "configurePreset": "amd64-gcc"
+        },
+        {
+            "name": "amd64-msvc",
+            "configurePreset": "amd64-clang"
+        }
+    ]
+}
