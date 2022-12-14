@@ -49,11 +49,11 @@
             "configurePreset": "amd64-msvc"
         },
         {
-            "name": "amd64-msvc",
+            "name": "amd64-gcc",
             "configurePreset": "amd64-gcc"
         },
         {
-            "name": "amd64-msvc",
+            "name": "amd64-clang",
             "configurePreset": "amd64-clang"
         }
     ]
