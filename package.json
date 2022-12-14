@@ -1,5 +1,6 @@
 {
   "name": "BuildOutputColorizer",
+  "publisher": "SteveBushResearch",
   "displayName": "Build Output Colorizer",
   "description": "Colorizes output log for VSCode hosted builds",
   "version": "0.1.2",
