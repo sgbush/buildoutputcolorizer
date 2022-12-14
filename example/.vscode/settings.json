@@ -1,4 +1,3 @@
 {
-    "cmake.cmakePath": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe",
-    
+    "cmake.cmakePath": "cmake"
 }
