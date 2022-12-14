@@ -47,13 +47,15 @@ This extension changes the default for `editor.tokenColorCustomizations` to allo
 This also allows for customization to your preferences.
 
 ## Known Issues
-This extension has been tested only on GCC and Clang C/C++ builds.  It has a quite limited set of syntax highlighting rules since normally the objective of compiler diagnostics is to draw the user's eye to the highest priority items.
+This extension has a quite limited set of syntax highlighting rules since normally the objective of compiler diagnostics is to draw the user's eye to the highest priority items.
 
-Contributions or suggestions for improvement are welcome.  Please raise an issue the extension's repository.
+Contributions or suggestions for improvement are welcome.  Please raise an issue at the extension's repository.
 
 ## Release Notes
 
 ### 0.1.0
-
 Initial release of Build Output Colorizer.
+
+### 0.1.2
+Refactor syntax rules and add CMake specific highlighting.
 
