@@ -69,6 +69,10 @@
 				{
 					"match": "\\[[0-9]+/[0-9]+\\]",
 					"name": "markup.other.log.highlight"
+				},
+				{
+					"match": "FAILED:",
+					"name": "markup.other.log.error"
 				}
 			]
 		}

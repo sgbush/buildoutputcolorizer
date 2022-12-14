@@ -2,7 +2,7 @@
   "name": "BuildOutputColorizer",
   "displayName": "Build Output Colorizer",
   "description": "Colorizes output log for VSCode hosted builds",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "repository": { "url": "https://github.com/sgbush/buildoutputcolorizer" },
   "engines": {
     "vscode": "^1.73.0"
