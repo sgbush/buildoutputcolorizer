@@ -59,3 +59,5 @@ Initial release of Build Output Colorizer.
 ### 0.1.2
 Refactor syntax rules and add CMake specific highlighting.
 
+### 0.1.5
+Correct issue that breaks hyperlinks to files

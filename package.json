@@ -3,7 +3,7 @@
   "publisher": "SteveBushResearch",
   "displayName": "Build Output Colorizer",
   "description": "Colorizes output log for VSCode hosted builds",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "repository": { "url": "https://github.com/sgbush/buildoutputcolorizer" },
   "license": "MIT",
   "icon": "assets/b-o-c-icon.png",
@@ -42,14 +42,14 @@
     },
     "languages": [
       {
-        "id": "BuildOutput",
+        "id": "Log",
         "configuration": "./language-configuration.json",
         "mimetypes": [ "log", "text/log", "text/x-log", "text/x-code-output", "x-code-output" ]
       }
     ],
     "grammars": [
       {
-        "language": "BuildOutput",
+        "language": "Log",
         "scopeName": "code.log",
         "path": "./syntaxes/log.tmLanguage.json",
         "embeddedLanguages": {
