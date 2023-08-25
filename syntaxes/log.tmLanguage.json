@@ -51,6 +51,10 @@
 					"name": "markup.other.log.error"
 				},
 				{
+					"match": "error LNK[0-9]+: .*$",
+					"name": "markup.other.log.error"
+				},
+				{
 					"match": "warning C[0-9]+: .*$",
 					"name": "markup.other.log.warn"
 				},

@@ -3,7 +3,7 @@
   "publisher": "SteveBushResearch",
   "displayName": "Build Output Colorizer",
   "description": "Colorizes output log for VSCode hosted builds",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "repository": { "url": "https://github.com/sgbush/buildoutputcolorizer" },
   "license": "MIT",
   "icon": "assets/b-o-c-icon.png",
