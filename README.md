@@ -8,7 +8,8 @@ The extension associates syntax highlighting rules to the Output window scope an
 
 By default the extension is **static**: it uses fixed colors defined in `editor.tokenColorCustomizations`. Optionally, it can be switched to **theme-tracking mode**, where it reads your active VS Code color theme's terminal ANSI colors and applies them automatically — updating whenever you switch themes.
 
-![Example Output](assets/screenshot1.png "Example Output")
+![Example Output](assets/screenshot1.png "Configure Output")
+![Example Output](assets/screenshot2.png "Build Output")
 
 ## Requirements
 
