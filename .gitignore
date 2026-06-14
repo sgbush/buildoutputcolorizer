@@ -6,3 +6,15 @@ node_modules
 token.txt
 
 
+# ignore build output
+out
+
+# ignore vscode extension development output
+.vscode-test
+
+# ignore node modules
+node_modules
+
+
+
+

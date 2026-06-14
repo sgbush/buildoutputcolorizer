@@ -1,3 +1,5 @@
 {
-    "cmake.cmakePath": "cmake"
+    "cmake.cmakePath": "cmake",
+    "buildOutputColorizer.useTerminalColors": false,
+    "buildOutputColorizer.enableDiagnosticLogging": true
 }

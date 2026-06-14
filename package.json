@@ -1,10 +1,13 @@
 {
   "name": "BuildOutputColorizer",
+  "main": "./out/extension.js",
   "publisher": "SteveBushResearch",
   "displayName": "Build Output Colorizer",
-  "description": "Colorizes output log for VSCode hosted builds",
-  "version": "0.1.8",
+  "description": "Applies syntax highlighting to the VS Code Output window for build diagnostics from GCC, Clang, MSVC, and CMake. Optionally tracks the active color theme.",
+  "keywords": ["build", "output", "colorize", "cmake", "gcc", "msvc", "clang", "log", "diagnostics"],
+  "version": "1.0.0",
   "repository": {
+    "type": "git",
     "url": "https://github.com/sgbush/buildoutputcolorizer"
   },
   "license": "MIT",
@@ -12,9 +15,17 @@
   "engines": {
     "vscode": "^1.74.0"
   },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "categories": [
     "Formatters"
   ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
   "contributes": {
     "configurationDefaults": {
       "editor.tokenColorCustomizations": {
@@ -52,6 +63,76 @@
         ]
       }
     },
+    "configuration": {
+      "title": "Build Output Colorizer",
+      "properties": {
+        "buildOutputColorizer.enableDiagnosticLogging": {
+          "type": "boolean",
+          "default": false,
+          "description": "When enabled, creates a 'Build Output Colorizer' channel in the Output panel and writes diagnostic log entries. Intended for troubleshooting only — leave disabled during normal use."
+        },
+        "buildOutputColorizer.useTerminalColors": {
+          "type": "boolean",
+          "default": false,
+          "description": "When enabled, applies the active theme's terminal ANSI colors to build output highlighting. Writes to editor.tokenColorCustomizations in global user settings."
+        },
+        "buildOutputColorizer.errorColorKey": {
+          "type": "string",
+          "default": "terminal.ansiRed",
+          "enum": [
+            "terminal.ansiBlack", "terminal.ansiRed", "terminal.ansiGreen", "terminal.ansiYellow",
+            "terminal.ansiBlue", "terminal.ansiMagenta", "terminal.ansiCyan", "terminal.ansiWhite",
+            "terminal.ansiBrightBlack", "terminal.ansiBrightRed", "terminal.ansiBrightGreen", "terminal.ansiBrightYellow",
+            "terminal.ansiBrightBlue", "terminal.ansiBrightMagenta", "terminal.ansiBrightCyan", "terminal.ansiBrightWhite"
+          ],
+          "description": "Terminal ANSI color to use for error highlights (markup.other.log.error)."
+        },
+        "buildOutputColorizer.warnColorKey": {
+          "type": "string",
+          "default": "terminal.ansiYellow",
+          "enum": [
+            "terminal.ansiBlack", "terminal.ansiRed", "terminal.ansiGreen", "terminal.ansiYellow",
+            "terminal.ansiBlue", "terminal.ansiMagenta", "terminal.ansiCyan", "terminal.ansiWhite",
+            "terminal.ansiBrightBlack", "terminal.ansiBrightRed", "terminal.ansiBrightGreen", "terminal.ansiBrightYellow",
+            "terminal.ansiBrightBlue", "terminal.ansiBrightMagenta", "terminal.ansiBrightCyan", "terminal.ansiBrightWhite"
+          ],
+          "description": "Terminal ANSI color to use for warning highlights (markup.other.log.warn)."
+        },
+        "buildOutputColorizer.infoColorKey": {
+          "type": "string",
+          "default": "terminal.ansiCyan",
+          "enum": [
+            "terminal.ansiBlack", "terminal.ansiRed", "terminal.ansiGreen", "terminal.ansiYellow",
+            "terminal.ansiBlue", "terminal.ansiMagenta", "terminal.ansiCyan", "terminal.ansiWhite",
+            "terminal.ansiBrightBlack", "terminal.ansiBrightRed", "terminal.ansiBrightGreen", "terminal.ansiBrightYellow",
+            "terminal.ansiBrightBlue", "terminal.ansiBrightMagenta", "terminal.ansiBrightCyan", "terminal.ansiBrightWhite"
+          ],
+          "description": "Terminal ANSI color to use for info highlights (markup.other.log.info)."
+        },
+        "buildOutputColorizer.debugColorKey": {
+          "type": "string",
+          "default": "terminal.ansiBrightBlack",
+          "enum": [
+            "terminal.ansiBlack", "terminal.ansiRed", "terminal.ansiGreen", "terminal.ansiYellow",
+            "terminal.ansiBlue", "terminal.ansiMagenta", "terminal.ansiCyan", "terminal.ansiWhite",
+            "terminal.ansiBrightBlack", "terminal.ansiBrightRed", "terminal.ansiBrightGreen", "terminal.ansiBrightYellow",
+            "terminal.ansiBrightBlue", "terminal.ansiBrightMagenta", "terminal.ansiBrightCyan", "terminal.ansiBrightWhite"
+          ],
+          "description": "Terminal ANSI color to use for debug highlights (markup.other.log.debug)."
+        },
+        "buildOutputColorizer.highlightColorKey": {
+          "type": "string",
+          "default": "terminal.ansiGreen",
+          "enum": [
+            "terminal.ansiBlack", "terminal.ansiRed", "terminal.ansiGreen", "terminal.ansiYellow",
+            "terminal.ansiBlue", "terminal.ansiMagenta", "terminal.ansiCyan", "terminal.ansiWhite",
+            "terminal.ansiBrightBlack", "terminal.ansiBrightRed", "terminal.ansiBrightGreen", "terminal.ansiBrightYellow",
+            "terminal.ansiBrightBlue", "terminal.ansiBrightMagenta", "terminal.ansiBrightCyan", "terminal.ansiBrightWhite"
+          ],
+          "description": "Terminal ANSI color to use for highlight (markup.other.log.highlight)."
+        }
+      }
+    },
     "languages": [
       {
         "id": "Log",
@@ -78,6 +159,12 @@
     ]
   },
   "dependencies": {
-    "@vscode/vsce": "^3.2.1"
+    "jsonc-parser": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.74.0",
+    "@vscode/vsce": "^3.2.1",
+    "typescript": "^5.0.0"
   }
 }
