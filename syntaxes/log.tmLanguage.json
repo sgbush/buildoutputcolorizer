@@ -75,24 +75,49 @@
 					"name": "markup.other.log.highlight"
 				},
 				{
-					"match": "Configuring done.*$",
-					"name": "markup.other.log.highlight"
+					"match": "(Configuring done.)*$",
+					"captures": {
+						"1": { "name": "markup.other.log.highlight" }
+					}
 				},
 				{
-					"match": "Generating done.*$",
-					"name": "markup.other.log.highlight"
+					"match": "(Generating done.*)$",
+					"captures": {
+						"1": { "name": "markup.other.log.highlight" }
+					}
 				},
 				{
 					"match": "FAILED:.*$",
 					"name": "markup.other.log.error"
 				},
 				{
-					"match": "CMake Error at.*$",
-					"name": "markup.other.log.error"
+					"match": "(CMake Error) at.*$",
+					"captures": {
+						"1": { "name": "markup.other.log.error" }
+					}
 				},
 				{
-					"match": "Build files have been.*$",
-					"name": "markup.other.log.highlight"
+					"match": "(CMake Warning) at.*$",
+					"captures": {
+						"1": { "name": "markup.other.log.warn" }
+					}
+				},
+				{
+					"match": "(Build files have been written to:)(.*$)",
+					"captures": {
+						"1": { "name": "markup.other.log.highlight" },
+						"2": { "name": "markup.other.log.debug" }
+					}
+				},
+				{
+					"match": "Executing command: (.*)$",
+					"captures": {
+						"1": { "name": "markup.other.log.debug" }
+					}
+				},
+				{
+					"match": "Removing .*$",
+					"name": "markup.other.log.debug"
 				}
 			]
 		}
