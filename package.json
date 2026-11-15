@@ -135,7 +135,8 @@
     },
     "languages": [
       {
-        "id": "Log",
+        "id": "buildoutput",
+        "aliases": ["Build Output"],
         "configuration": "./language-configuration.json",
         "mimetypes": [
           "log",
@@ -148,7 +149,7 @@
     ],
     "grammars": [
       {
-        "language": "Log",
+        "language": "buildoutput",
         "scopeName": "code.log",
         "path": "./syntaxes/log.tmLanguage.json",
         "embeddedLanguages": {
