@@ -5,7 +5,7 @@
   "displayName": "Build Output Colorizer",
   "description": "Applies syntax highlighting to the VS Code Output window for build diagnostics from GCC, Clang, MSVC, and CMake. Optionally tracks the active color theme.",
   "keywords": ["build", "output", "colorize", "cmake", "gcc", "msvc", "clang", "log", "diagnostics"],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/sgbush/buildoutputcolorizer"

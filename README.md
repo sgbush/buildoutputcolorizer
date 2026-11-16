@@ -118,9 +118,13 @@ Contributions or suggestions are welcome. Please raise an issue at the extension
 
 ## Release Notes
 
+### 1.0.1
+Fix packaging to include required dependencies.
+
 ### 1.0.0
 Add optional theme-tracking mode: when `buildOutputColorizer.useTerminalColors` is enabled, the extension reads the active theme's terminal ANSI colors and applies them to the log highlight scopes, updating automatically on theme change. Per-scope ANSI color key mappings are user-configurable.
 
+### 0.1.8
 Syntax rules were refined to generally use highlight more sparingly, and cover more cases for CMake-generated messages of interest.
 
 ### 0.1.7
